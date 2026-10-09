@@ -1,6 +1,6 @@
 // cache app
-const CACHE = "tgq-v1";
-const SHELL = ["./", "index.html", "manifest.webmanifest", "icon.svg"];
+const CACHE = "tgq-v2";
+const SHELL = ["./", "index.html", "styles.css", "manifest.webmanifest", "icon.svg"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
