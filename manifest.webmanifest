@@ -1,0 +1,10 @@
+{
+  "name": "Touch Grass Quest",
+  "short_name": "Grass Quest",
+  "description": "Outdoor quests checked by an AI that runs in your browser.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#e6ede0",
+  "theme_color": "#2f5233",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
