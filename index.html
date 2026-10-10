@@ -123,7 +123,7 @@
     const $ = (id) => document.getElementById(id);
     const status = (msg) => { $("status").textContent = msg; };
     const DEV = location.search.includes("dev"); // dev mode
-    const COOLDOWN_MS = 5 * 60 * 1000;
+    const COOLDOWN_MS = 3 * 60 * 1000;
     const today = () => new Date().toLocaleDateString("en-CA");
     const yesterday = () => { const d = new Date(); d.setDate(d.getDate() - 1); return d.toLocaleDateString("en-CA"); };
 
@@ -255,11 +255,9 @@
     let clipState = "idle", genState = "idle", libP = null, clipP = null, genP = null;
     const lib = () => (libP ||= import(TRANSFORMERS_URL));
     function showLoad() {
-      let label = "", pct = 0;
-      if (clipState === "loading") { label = "Getting the photo checker ready"; pct = progress.clip; }
-      else if (genState === "loading") { label = "Loading the quest writer in the background (you can already play)"; pct = progress.gen; }
-      $("load").hidden = !label;
-      if (label) { $("loadBar").style.width = Math.round(pct * 100) + "%"; $("loadText").textContent = `${label}… ${Math.round(pct * 100)}%`; }
+      const loading = clipState === "loading";
+      $("load").hidden = !loading;
+      if (loading) { $("loadBar").style.width = Math.round(progress.clip * 100) + "%"; $("loadText").textContent = `Getting the photo checker ready… ${Math.round(progress.clip * 100)}%`; }
     }
     function tracker(key) {
       const files = {};
@@ -300,11 +298,11 @@
         }
         genState = models.gen ? "ready" : "failed"; showLoad();
         status(models.gen
-          ? `Quest writer ready: ${models.genName}. CLIP checks your photos. Both run on this device.`
-          : "Quest writer unavailable, so quests use templates. The photo check still works.");
+          ? `Quest writer ready (${models.genName}), on-device.`
+          : "Quest writer unavailable, using templates.");
       })().catch(() => {
         genState = "failed"; showLoad();
-        status("Quest writer unavailable, so quests use templates. The photo check still works.");
+        status("Quest writer unavailable, using templates.");
       });
       return genP;
     }
