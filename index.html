@@ -150,7 +150,7 @@
         g += `<ellipse cx="51" cy="${y - 5}" rx="11" ry="5" transform="rotate(28 51 ${y - 5})" fill="var(--green)" stroke="currentColor" stroke-width="2"/>`;
       }
       if (stage >= 3) g += `<circle cx="40" cy="${top - 4}" r="${stage >= 4 ? 17 : 13}" fill="var(--green)" stroke="currentColor" stroke-width="2"/>`;
-      if (stage >= 4) g += [[32, -8], [47, -2], [40, -16]].map(([dx, dy]) => `<circle cx="${40 + dx - 40 + 33}" cy="${top + dy}" r="3.5" fill="var(--orange)" stroke="currentColor" stroke-width="1.5"/>`).join("");
+      if (stage >= 4) g += [[-9, -3], [9, -8], [0, -17]].map(([dx, dy]) => `<circle cx="${40 + dx}" cy="${top - 4 + dy}" r="3.5" fill="var(--orange)" stroke="currentColor" stroke-width="1.5"/>`).join("");
       return `<svg viewBox="0 0 80 100" role="img" aria-label="Your plant">${g}</svg>`;
     }
     function renderPlant() {
