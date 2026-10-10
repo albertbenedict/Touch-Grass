@@ -419,6 +419,7 @@
       object-fit: cover;
       border: 2px solid var(--ink);
       border-radius: 4px;
+      margin-top: .8rem;
       margin-bottom: .8rem;
     }
 
