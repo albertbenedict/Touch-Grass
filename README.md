@@ -52,7 +52,7 @@ and skips waiting times). No build step. Deploy by serving the folder as-is
   camera only raises the bar.
 - The small on-device models write imperfect quest text, so every line is
   filtered and templates are used as a fallback.
-- The first load downloads a few hundred MB of model files; later loads work
+- The first load downloads large model files (cached afterwards); later loads work
   offline.
 
 ## Related work
