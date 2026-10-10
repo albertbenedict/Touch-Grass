@@ -55,12 +55,6 @@ and skips waiting times). No build step. Deploy by serving the folder as-is
 - The first load downloads large model files (cached afterwards); later loads work
   offline.
 
-## Related work
-
-- [Touch Grass, Not Glass](https://dev.to/raphelevator/touch-grass-not-glass-a-camera-that-only-works-outside-2268)
-  by raphelevator — a similar quest-and-photo idea; this project is the
-  gamified, browser-only take.
-
 ## Screenshots
 
 ![Quest view](docs/screenshots/quest.png)
