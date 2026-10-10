@@ -302,12 +302,15 @@
         status(models.gen
           ? `Quest writer ready: ${models.genName}. CLIP checks your photos. Both run on this device.`
           : "Quest writer unavailable, so quests use templates. The photo check still works.");
-      })();
+      })().catch(() => {
+        genState = "failed"; showLoad();
+        status("Quest writer unavailable, so quests use templates. The photo check still works.");
+      });
       return genP;
     }
     function startLoading() {
       if (location.protocol === "file:") status("Heads up: open this through a local server or a deployed URL, not by double-clicking the file.");
-      ensureClip().then(ensureGen).catch(() => { });
+      ensureClip().catch(() => { }).then(ensureGen).catch(() => { });
     }
 
     // quests
