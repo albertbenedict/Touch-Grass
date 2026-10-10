@@ -174,7 +174,7 @@
   const art = t.slice(0, t.length - bare.length);
   const done = state.dailyDone === today();
   const active = !!(state.quest && state.quest.daily && !state.quest.done);
-  $("dailyText").innerHTML = done ? "Done. A new one arrives tomorrow." : `Today's shared quest: find ${art}<b>${bare}</b>. 50 XP.`;
+  $("dailyText").innerHTML = done ? "Done. A new one arrives tomorrow." : `Find ${art}<b>${bare}</b>. 50 XP.`;
       $("dailyQuest").hidden = done;
       $("dailyQuest").disabled = active;
       $("dailyQuest").textContent = active ? "In progress" : "Start";
