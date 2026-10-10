@@ -354,11 +354,10 @@ Target: ${target} ->`;
       if (!keepResult) { $("result").textContent = ""; $("result").className = ""; $("preview").hidden = true; }
       let text = templateFor(deal.target);
       state.quest = { text, target: deal.target, diff: deal.diff, poolIdx: deal.idx, done: false };
-      if (models.gen) {
-        state.quest.text = "Writing your quest…"; render();
-        try { text = (await writeQuest(deal.target)) || text; } catch (e) { console.error(e); }
-      }
-      if (seq !== questSeq) return;
+  if (models.gen) {
+    try { text = (await writeQuest(deal.target)) || text; } catch (e) { console.error(e); }
+  }
+  if (seq !== questSeq || state.quest.done) return;
       state.quest.text = text; save(); render();
     }
     function dailyQuest() {
