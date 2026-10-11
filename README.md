@@ -52,7 +52,7 @@ Progress is stored in your browser's `localStorage` under the key `tgq`.
 
 ## Related work
 
-["Touch Grass, Not Glass" by @raphelevator](https://dev.to/raphelevator/touch-grass-not-glass-a-camera-that-only-works-outside-2268) explores a similar quest-and-photo idea in a deliberately game-free direction. This project is the gamified, browser-only take.
+While building this, I came across “Touch Grass, Not Glass” by @raphelevator, which also pairs outdoor quests with a photo check. I found it after my own quest-and-photo loop was working. This project takes the gamified, browser-only route.
 
 ## Screenshots
 
