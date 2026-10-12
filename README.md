@@ -50,10 +50,6 @@ Progress is stored in your browser's `localStorage` under the key `tgq`.
 - **The shared quest is the same for everyone,** so it can be impossible in some places (not everyone lives near a lake).
 - **The first load downloads large model files.**
 
-## Related work
-
-While building this, I came across “Touch Grass, Not Glass” by @raphelevator, which also pairs outdoor quests with a photo check. I found it after my own quest-and-photo loop was working. This project takes the gamified, browser-only route.
-
 ## Screenshots
 
 ![Welcome](docs/screenshots/welcome.png)
